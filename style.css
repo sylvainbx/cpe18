@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "DejaVuSans";
+  src: local("DejaVu Sans"), url("DejaVuSans.ttf");
+}
+
+
+
+@media screen and (max-width: 970px) {
+  .content {
+    font-size: 6em;   
+  }
+  .content .text > object {
+    width: 90px;
+    vertical-align: middle;   
+  }
+  
+  .buttons > button {
+    font-size: 2em;
+  }
+  .login {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .buttons > button {
+    font-size: 10em;
+  }
+  .login {
+    font-size: 2rem;
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: "DejaVuSans", "Arial", sans-serif;
+}
+.buttons {
+  position: absolute;
+  right: 0;
+  display: flex;
+}
+.buttons > button {
+  color: #86cbec;
+  background: #FFF;
+  border: 0;
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+}
+.buttons > button:hover {
+  color: #69a1bb;
+  cursor: pointer;
+}
+.buttons > div {
+  padding: 1.6rem;
+}
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  font-size: 10rem;
+  transition: background-color 1000ms linear;
+  text-shadow: 0px 2px 6px #888;
+  background-color: #fff;
+  flex-direction: column;
+}
+
+.content .text {
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.content .text > object {
+  vertical-align: top;
+}
+.login {
+  display: none;
+  font-size: 1rem;
+  transition: display 1s linear;
+  text-shadow: none;
+}
+.login > input {
+  padding: 5px 10px;
+  font-size: 12pt;
+  border: 1px solid #77b255;
+  border-radius: 3px;
+}
+
+.connected-content {
+  display: flex;
+  padding-top: 6rem;
+  flex-wrap: wrap;
+}
+
+.gradient-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  max-width: 22em;
+
+  position: relative;
+  padding: 1em 2em;
+  box-sizing: border-box;
+
+  color: #000;
+  background: #fff;
+  background-clip: padding-box;
+  border: solid 5px transparent;
+  border-radius: 1em;
+}
+
+.gradient-box:before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -1;
+  margin: -5px;
+  border-radius: inherit;
+  background: linear-gradient(to right, #77b255, #9cff0059);
+}
