@@ -25,3 +25,4 @@ jobs:
         server: ftp.cluster029.hosting.ovh.net
         username: ${{ secrets.ftp_user }}
         password: ${{ secrets.ftp_password }}
+        server-dir: www
