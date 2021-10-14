@@ -20,6 +20,7 @@ foreach ($users as $user) {
 }
 if (isset($_SESSION['user'][1])) {
   include('ressources/connected.php');
+  opcache_invalidate('ressources/connected.php');
 } else {
   header('HTTP/1.0 403 Forbidden');
   header('Location: /');
