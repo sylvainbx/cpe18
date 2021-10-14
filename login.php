@@ -1,4 +1,5 @@
 <?php
+opcache_reset();
 function read($csv){
     $file = fopen($csv, 'r');
     while (!feof($file) ) {
@@ -19,7 +20,6 @@ foreach ($users as $user) {
     }
 }
 if (isset($_SESSION['user'][1])) {
-   opcache_invalidate('ressources/connected.php');     
    include('ressources/connected.php');
 } else {
   header('HTTP/1.0 403 Forbidden');
