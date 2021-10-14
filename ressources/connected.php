@@ -1,5 +1,5 @@
 <?php
-  $reportage = file_get_contents('../db/reportage.link');
+  $reportage = file_get_contents('db/reportage.link');
 ?>
 <!doctype html>
 <html lang="fr">
