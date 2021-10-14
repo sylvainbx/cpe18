@@ -1,5 +1,5 @@
 <?php
-  $link1 = file_get_contents('../db/reportage.link');
+  $reportage = file_get_contents('../db/reportage.link');
 ?>
 <!doctype html>
 <html lang="fr">
@@ -36,7 +36,7 @@
       </div>
       <div class="gradient-box">
         <h2>Vu à la télé</h2>
-	<a href="<?=$link1%>">Stage 2020 en Suisse</a>
+	<a href="<?=$reportage?>">Stage 2020 en Suisse</a>
       </div>
     </div>
   </body>
