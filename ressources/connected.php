@@ -31,6 +31,10 @@
         <h2>Livres et flores</h2>
         <a href="https://mega.nz/folder/Wn5jxA7I#MclwaWYrvPAtfljH6crkbQ">Cliquez ici</a>
       </div>
+      <div class="gradient-box">
+        <h2>Vu à la télé</h2>
+        <a href="https://mega.nz/file/fvgQHJpC#nqknoA8eSeEUyBVSYOPihwiJtg0gvCPAS1ILE6RXg_M">Stage 2020 en Suisse</a>
+      </div>
     </div>
   </body>
 </html>
