@@ -1,3 +1,6 @@
+<?php
+  $link1 = file_get_contents('../db/reportage.link');
+?>
 <!doctype html>
 <html lang="fr">
   <head>
@@ -33,7 +36,7 @@
       </div>
       <div class="gradient-box">
         <h2>Vu à la télé</h2>
-        <a href="https://mega.nz/file/fvgQHJpC#nqknoA8eSeEUyBVSYOPihwiJtg0gvCPAS1ILE6RXg_M">Stage 2020 en Suisse</a>
+	<a href="<?=$link1%>">Stage 2020 en Suisse</a>
       </div>
     </div>
   </body>
