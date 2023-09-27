@@ -1,5 +1,8 @@
 <?php
   $reportage = file_get_contents('db/reportage.link');
+  $cours = file_get_contents('db/courses.link');
+  $cours_video = file_get_contents('db/video_courses.link');
+  $vannerie = file_get_contents('db/vannerie.link');
 ?>
 <!doctype html>
 <html lang="fr">
@@ -17,14 +20,11 @@
     <div class="connected-content">
       <div class="gradient-box">
         <h2>Les cours</h2>
-        <ul>
-          <li><a href="https://sites.google.com/site/plateformeechangecpe18annee1/">1ère année</a></li>
-          <li><a href="https://sites.google.com/site/plateformeechangecpe18annee2/">2ème année</a></li>
-          <li><a href="https://sites.google.com/site/plateformeechangecpe18annee3ok/">3ème année</a></li>
-        <ul>
+	<a href="<?=$cours?>">Les documents</a>
+	<a href="<?=$cours_video?>">Les vidéos</a>
       </div>
       <div class="gradient-box">
-        <h2>Liste de diffusion</h2>
+        <h2>Liste de diffusion entre élèves</h2>
         <ul>
           <li><a href="mailto:cpe18@framalistes.org">cpe18@framalistes.org</a></li>
           <li><a href="https://framalistes.org/sympa/arc/cpe18">Voir les archives</a></li>
@@ -35,8 +35,11 @@
         <a href="https://mega.nz/folder/Wn5jxA7I#MclwaWYrvPAtfljH6crkbQ">Cliquez ici</a>
       </div>
       <div class="gradient-box">
-        <h2>Vu à la télé</h2>
-	<a href="<?=$reportage?>">Stage 2020 en Suisse</a>
+        <h2>Vidéos</h2>
+        <ul>
+          <li><a href="<?=$reportage?>">Cueilleurs par nature (Stage 2020 en Suisse)</a></li>
+          <li><a href="<?=$vannerie?>">Tutoriel vannerie spiralée (Stage 2023 chez Bérangère)</a></li>
+	</ul>
       </div>
     </div>
   </body>
