@@ -3,6 +3,7 @@
   $cours = file_get_contents('db/courses.link');
   $cours_video = file_get_contents('db/video_courses.link');
   $vannerie = file_get_contents('db/vannerie.link');
+  $photos = file_get_contents('db/photos.link');
 ?>
 <!doctype html>
 <html lang="fr">
@@ -28,7 +29,6 @@
         <h2>Liste de diffusion entre élèves</h2>
         <ul>
           <li><a href="mailto:cpe18@framalistes.org">cpe18@framalistes.org</a></li>
-          <li><a href="https://framalistes.org/sympa/arc/cpe18">Voir les archives</a></li>
         </ul>
       </div>
       <div class="gradient-box gradient-box--compact">
@@ -40,7 +40,11 @@
         <ul>
           <li><a href="<?=$reportage?>">Cueilleurs par nature (Stage 2020 en Suisse)</a></li>
           <li><a href="<?=$vannerie?>">Tutoriel vannerie spiralée (Stage 2023 chez Bérangère)</a></li>
-	</ul>
+	    </ul>
+      </div>
+      <div class="gradient-box">
+        <h2>Photos</h2>
+        <a href="<?=$photos?>">Cliquez ici</a>
       </div>
     </div>
   </body>
