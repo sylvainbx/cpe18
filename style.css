@@ -3,121 +3,229 @@
   src: local("DejaVu Sans"), url("DejaVuSans.ttf");
 }
 
-
-
-@media screen and (max-width: 970px) {
-  .content {
-    font-size: 6em;   
-  }
-  .content .text > object {
-    width: 90px;
-    vertical-align: middle;   
-  }
-  
-  .buttons > button {
-    font-size: 2em;
-  }
-  .login {
-    font-size: 2rem;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media screen and (max-width: 650px) {
-  .buttons > button {
-    font-size: 10em;
-  }
-  .login {
-    font-size: 2rem;
-  }
+:root {
+  --bg-gradient: radial-gradient(circle at top, #f3f7ff 0%, #e6eef8 45%, #d4e1f5 100%);
+  --text-color: #1f2a44;
+  --accent-color: #2a8c8c;
+  --accent-color-hover: #226f70;
+  --button-text: #ffffff;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: #ffffff;
+  --shadow-soft: 0 18px 45px rgba(23, 37, 84, 0.12);
+  --radius-lg: 1.5rem;
+  --radius-md: 0.9rem;
+  --transition: 200ms ease-in-out;
+  color-scheme: light;
 }
-
 
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: "DejaVuSans", "Arial", sans-serif;
-}
-.buttons {
-  position: absolute;
-  right: 0;
+  background: var(--bg-gradient);
+  color: var(--text-color);
   display: flex;
-}
-.buttons > button {
-  color: #86cbec;
-  background: #FFF;
-  border: 0;
-  font-size: 1.5rem;
-  padding: 1rem 3rem;
-}
-.buttons > button:hover {
-  color: #69a1bb;
-  cursor: pointer;
-}
-.buttons > div {
-  padding: 1.6rem;
-}
-.content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100vh;
-  font-size: 10rem;
-  transition: background-color 1000ms linear;
-  text-shadow: 0px 2px 6px #888;
-  background-color: #fff;
   flex-direction: column;
+}
+
+.buttons {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  z-index: 10;
+}
+
+.buttons > div.hello {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.buttons > button {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--button-text);
+  background: var(--accent-color);
+  box-shadow: 0 10px 25px rgba(42, 140, 140, 0.28);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+}
+
+.buttons > button:hover,
+.buttons > button:focus-visible {
+  background: var(--accent-color-hover);
+  transform: translateY(-2px);
+  cursor: pointer;
+  box-shadow: 0 14px 32px rgba(34, 111, 112, 0.32);
+}
+
+.buttons > button:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 3px;
+}
+
+.content {
+  flex: 1;
+  width: min(960px, 100%);
+  margin: 0 auto;
+  padding: 5.5rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
 }
 
 .content .text {
+  display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  font-size: clamp(2.75rem, 8vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 8px 24px rgba(23, 37, 84, 0.16);
 }
+
 .content .text > object {
-  vertical-align: top;
+  width: clamp(64px, 16vw, 120px);
+  height: auto;
 }
+
 .login {
   display: none;
-  font-size: 1rem;
-  transition: display 1s linear;
-  text-shadow: none;
+  width: min(100%, 380px);
+  padding: 2.5rem 2.25rem;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-soft);
+  text-align: left;
 }
+
+.login label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
+}
+
 .login > input {
-  padding: 5px 10px;
-  font-size: 12pt;
-  border: 1px solid #77b255;
-  border-radius: 3px;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(31, 42, 68, 0.12);
+  background: var(--surface-strong);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.login > input:focus-visible {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(42, 140, 140, 0.15);
+}
+
+.login > input[type="submit"] {
+  border: none;
+  margin-top: 0.5rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--button-text);
+  background: var(--accent-color);
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+}
+
+.login > input[type="submit"]:hover,
+.login > input[type="submit"]:focus-visible {
+  background: var(--accent-color-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 28px rgba(34, 111, 112, 0.28);
 }
 
 .connected-content {
-  display: flex;
-  padding-top: 6rem;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  padding: 6rem 1.5rem 3rem;
 }
 
 .gradient-box {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  margin: auto;
-  max-width: 22em;
-
-  position: relative;
-  padding: 1em 2em;
-  box-sizing: border-box;
-
-  color: #000;
-  background: #fff;
-  background-clip: padding-box;
-  border: solid 5px transparent;
-  border-radius: 1em;
+  gap: 1rem;
+  padding: 2rem 2.25rem;
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
 }
 
-.gradient-box:before {
-  content: '';
+.gradient-box::before {
+  content: "";
   position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0;
   z-index: -1;
-  margin: -5px;
+  margin: -2px;
   border-radius: inherit;
-  background: linear-gradient(to right, #77b255, #9cff0059);
+  background: linear-gradient(135deg, rgba(42, 140, 140, 0.55), rgba(89, 193, 190, 0.35));
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding-top: 6.5rem;
+  }
+
+  .buttons > button {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .buttons {
+    top: 2rem;
+    right: 2rem;
+    gap: 2rem;
+  }
+
+  .content {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 3.5rem;
+  }
+
+  .content .text {
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .login {
+    text-align: left;
+  }
+
+  .connected-content {
+    padding-top: 10rem;
+  }
 }

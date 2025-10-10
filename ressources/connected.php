@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="buttons">
-      <div>Bonjour <?=$_SESSION['user'][1]?></div>
+      <div class="hello">Bonjour <?=$_SESSION['user'][1]?></div>
       <button onClick="logout()">Se déconnecter</button>
     </div>
     <div class="connected-content">
