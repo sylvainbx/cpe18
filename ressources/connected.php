@@ -8,6 +8,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf8">
+    <base href="/">
     <title>CPE 2018</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js"></script>
@@ -20,8 +21,8 @@
     <div class="connected-content">
       <div class="gradient-box">
         <h2>Les cours</h2>
-	<a href="<?=$cours?>">Les documents</a>
-	<a href="<?=$cours_video?>">Les vidéos</a>
+        <a href="<?=$cours?>">Les documents</a>
+        <a href="<?=$cours_video?>">Les vidéos</a>
       </div>
       <div class="gradient-box">
         <h2>Liste de diffusion entre élèves</h2>
@@ -30,7 +31,7 @@
           <li><a href="https://framalistes.org/sympa/arc/cpe18">Voir les archives</a></li>
         </ul>
       </div>
-      <div class="gradient-box">
+      <div class="gradient-box gradient-box--compact">
         <h2>Livres et flores</h2>
         <a href="https://mega.nz/folder/Wn5jxA7I#MclwaWYrvPAtfljH6crkbQ">Cliquez ici</a>
       </div>
